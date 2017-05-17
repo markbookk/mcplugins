@@ -1,0 +1,23 @@
+name: CoolCraftCore
+author: Mark
+version: 1.1
+main: com.coolmark01.endless.coolcraftcore.Core
+depend: [Factions]
+commands:
+    wild:
+    rule:
+    base:
+    enemy:
+    ally:
+    nv:
+    nightvison:
+    fsocialspy:
+    ts:
+    teamspeak:
+
+permissions:
+    cccore.nv:
+        description: Allows the player to /nv
+    cccore.fsocialspy:
+        description: Allows the player to /fsocialspy
+

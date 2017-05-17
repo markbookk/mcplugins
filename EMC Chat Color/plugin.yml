@@ -1,0 +1,8 @@
+name: endlessChat
+main: me.coolmark01.endless.chatColor.Core
+version: 1.0
+author: MisterJW
+commands:
+  cchat:
+    usage: /<command>
+    description: Click on a color to change your chat

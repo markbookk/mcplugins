@@ -1,0 +1,5 @@
+name: MattStoneSworders
+author: coolmark01
+description: Prevent stone sworders by lowering damage to 0.5 heart.
+version: 1.0
+main: me.coolmark01.crown.stoneSworders.Core

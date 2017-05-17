@@ -1,0 +1,5 @@
+name: EPearlCooldown
+author: coolmark01
+description: Ender Pearl Cooldown to prevent abuse.
+version: 1.2
+main: me.coolmark01.crown.ePearl.Main

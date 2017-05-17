@@ -1,0 +1,7 @@
+main: com.coolmark01.ccbeta.hitmessages.Main
+name: CoolCraftAdmin
+version: 1.0
+author: coolmark01
+description: Coolcraft admin control.
+commands:
+  hitmessages:

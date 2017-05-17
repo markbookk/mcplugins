@@ -1,0 +1,11 @@
+name: ShopGui
+author: tokyojack
+version: 1.0
+main: me.tokyojack.shop.Core
+depend: [Vault]
+commands:
+    shop:
+    shops:
+permissions:
+    shopgui.shop:
+        description: Allows the player to /shop

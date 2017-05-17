@@ -1,0 +1,5 @@
+name: MattVillager
+author: coolmark01
+description: Prevent Villager trading.
+version: 1.0
+main: me.coolmark01.crown.antiVillager.Core

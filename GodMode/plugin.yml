@@ -1,0 +1,8 @@
+name: GodMode
+author: Mark
+version: 1.0
+main: me.coolmark01.McBukkit.GodMode.Core
+commands:
+    godmode:
+        usage: /<command>
+        description: Use GodMode!
