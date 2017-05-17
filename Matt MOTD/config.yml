@@ -1,0 +1,10 @@
+#Created by coolmark01 for Crown-MC
+##################################
+
+#To add a message just do below MotdList:
+# - 'MessageYouWant'
+
+#This also works with color codes.
+
+MotdList:
+- 'This is the default message.'

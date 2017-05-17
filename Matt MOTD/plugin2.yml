@@ -1,0 +1,5 @@
+name: MattMotd
+version: 1.0
+description: Changes the server MOTD every time player presses refresh.
+main: me.coolmark01.crown.motd.Core
+author: coolmark01
