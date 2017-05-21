@@ -1,5 +1,5 @@
-name: ShopGui
-author: tokyojack
+name: ShopGUI
+author: Mark (Jack OG dev)
 version: 1.0
 main: me.tokyojack.shop.Core
 depend: [Vault]

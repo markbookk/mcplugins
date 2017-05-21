@@ -1,8 +1,6 @@
 package me.tokyojack.shop;
 
-import java.util.List;
-import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.economy.EconomyResponse;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -11,8 +9,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.inventory.meta.ItemMeta;
+
+import net.milkbowl.vault.economy.EconomyResponse;
 
 
 public class InventoryClick
@@ -93,8 +91,11 @@ public class InventoryClick
       (event.getInventory().getName().equals(GUIClass.plantsFoodMenu().getName())) || 
       (event.getInventory().getName().equals(GUIClass.mobDrops().getName())) || 
       (event.getInventory().getName().equals(GUIClass.cannonMenu().getName())) || 
-      (event.getInventory().getName().equals(GUIClass.donatorMenu().getName())) || 
-      (event.getInventory().getName().equals(GUIClass.spawnerMenu().getName()))) {
+      (event.getInventory().getName().equals(GUIClass.donatorMenu().getName())) 
+      //|| 
+      //(event.getInventory().getName().equals(GUIClass.spawnerMenu().getName()))
+      ) 
+    {
       event.setCancelled(true);
       
       if (!clicked.hasItemMeta())
@@ -1610,6 +1611,82 @@ public class InventoryClick
         }
       }
       event.setCancelled(true);
+    }
+    else if (event.getInventory().getName().equals(GUIClass.spawnerMenu().getName()))
+    {
+      event.setCancelled(true);
+      String name = ChatColor.stripColor(clicked.getItemMeta().getDisplayName());
+      String cleanedLore = ChatColor.stripColor((String)clicked.getItemMeta().getLore().get(0));
+      
+      String getNum = cleanedLore.replace("Buy: ", "").replace("$", "");
+      int amountmoney = Integer.parseInt(getNum);
+      if (player.getInventory().firstEmpty() == -1)
+      {
+        player.sendMessage(ChatColor.RED + ChatColor.BOLD.toString() + "You need: " + ChatColor.GRAY + 
+          "1 Empty Slots" + ChatColor.RED + " to buy!");
+        return;
+      }
+      if (Core.economy.getBalance(player.getName()) >= amountmoney)
+      {
+        EconomyResponse r = Core.economy.withdrawPlayer(player.getName(), amountmoney);
+        if (r.transactionSuccess())
+        {
+          player.sendMessage(ChatColor.RED + ChatColor.BOLD.toString() + amountmoney + "$");
+          if (name.toLowerCase().contains("pig")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " pig 1");
+          }
+          if (name.toLowerCase().contains("cow")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " cow 1");
+          }
+          if (name.toLowerCase().contains("squid")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " squid 1");
+          }
+          if (name.toLowerCase().contains("chicken")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " chicken 1");
+          }
+          if (name.toLowerCase().contains("skeleton")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " skeleton 1");
+          }
+          if (name.toLowerCase().contains("zombie")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " zombie 1");
+          }
+          if (name.toLowerCase().contains("spider")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " spider 1");
+          }
+          if (name.toLowerCase().contains("cave Spider")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " cavespider 1");
+          }
+          if (name.toLowerCase().contains("witch")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " witch 1");;
+          }
+          if (name.toLowerCase().contains("blaze")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " blaze 1");
+          }
+          if (name.toLowerCase().contains("creeper")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " creeper 1");
+          }
+          if (name.toLowerCase().contains("mooshroom")) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), 
+              "silkspawners give " + player.getName() + " mooshroom 1");
+          }
+          event.setCancelled(true);
+        }
+      }
+      else
+      {
+        player.sendMessage(ChatColor.RED + ChatColor.BOLD.toString() + "Not enough Money!");
+      }
     }
     else if (event.getInventory().getName().equals(GUIClass.vipchooseMenu().getName())) {
       event.setCancelled(true);

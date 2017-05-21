@@ -92,7 +92,7 @@ public class GUIClass
   
   public static Inventory vipchooseMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 27, ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.GOLD + ChatColor.BOLD.toString() + " Vip Menu");
+      ChatColor.BOLD.toString() + " >" + ChatColor.GOLD + ChatColor.BOLD.toString() + " Vip Menu");
     
     org.bukkit.inventory.ItemStack donator = new ItemBuilder(org.bukkit.Material.EMERALD)
       .setName(ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + "Donator Shop").toItemStack();
@@ -138,7 +138,7 @@ public class GUIClass
   public static Inventory cannonMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 45, 
       ChatColor.GRAY + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.DARK_RED + ChatColor.BOLD.toString() + 
+      ChatColor.BOLD.toString() + " >" + ChatColor.DARK_RED + ChatColor.BOLD.toString() + 
       " Cannon Shop");
     
     org.bukkit.inventory.ItemStack water = new ItemBuilder(org.bukkit.Material.WATER_BUCKET)
@@ -301,7 +301,7 @@ public class GUIClass
   public static Inventory donatorMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 36, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + 
+      ChatColor.BOLD.toString() + " >" + ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + 
       " Donator Shop");
     org.bukkit.inventory.ItemStack cobblestone = new ItemBuilder(org.bukkit.Material.COBBLESTONE)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$1800")
@@ -422,19 +422,21 @@ public class GUIClass
   public static Inventory spawnerMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 54, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.YELLOW + ChatColor.BOLD.toString() + 
+      ChatColor.BOLD.toString() + " >" + ChatColor.YELLOW + ChatColor.BOLD.toString() + 
       " Spawners");
     
     org.bukkit.inventory.ItemStack pig = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$100000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lPig&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lPig&7&l] &aSpawner")).setDurability((short)90)
+      .toItemStack();
     org.bukkit.inventory.ItemStack chicken = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$100000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lChicken&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lChicken&7&l] &aSpawner")).setDurability((short)93)
+      .toItemStack();
     
 //    org.bukkit.inventory.ItemStack wolf = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
 //      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$45000")
@@ -461,54 +463,60 @@ public class GUIClass
 //      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lHorse&7&l] &aSpawner")).toItemStack();
     
     org.bukkit.inventory.ItemStack cavespider = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$80000")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$100000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lCave Spider&7&l] &aSpawner"))
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lCave Spider&7&l] &aSpawner")).setDurability((short)59)
       .toItemStack();
     
     org.bukkit.inventory.ItemStack spider = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$100000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lSpider&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lSpider&7&l] &aSpawner")).setDurability((short)52)
+      .toItemStack();
     
     org.bukkit.inventory.ItemStack Skeleton = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lSkeleton&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lSkeleton&7&l] &aSpawner")).setDurability((short)51)
+      .toItemStack();
     
     org.bukkit.inventory.ItemStack zombie = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$150000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lZombie&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lZombie&7&l] &aSpawner")).setDurability((short)54)
+      .toItemStack();
     
     org.bukkit.inventory.ItemStack cow = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lCow&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lCow&7&l] &aSpawner")).setDurability((short)92)
+      .toItemStack();
     
     org.bukkit.inventory.ItemStack mushroomcow = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$250000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lMooshroom&7&l] &aSpawner"))
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lMooshroom&7&l] &aSpawner")).setDurability((short)96)
       .toItemStack();
     
     org.bukkit.inventory.ItemStack squid = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lSquid&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lSquid&7&l] &aSpawner")).setDurability((short)94)
+      .toItemStack();
     
     org.bukkit.inventory.ItemStack witch = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$250000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lWitch&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lWitch&7&l] &aSpawner")).setDurability((short)66)
+      .toItemStack();
     
 //    org.bukkit.inventory.ItemStack guardian = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
 //      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$400000")
@@ -532,13 +540,15 @@ public class GUIClass
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$500000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lCreeper&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lCreeper&7&l] &aSpawner")).setDurability((short)52)
+      .toItemStack();
     
     org.bukkit.inventory.ItemStack blaze = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$500000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
-      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lBlaze&7&l] &aSpawner")).toItemStack();
+      .setName(ChatColor.translateAlternateColorCodes('&', "&7&l[&e&lBlaze&7&l] &aSpawner")).setDurability((short)61)
+      .toItemStack();
     
 //    org.bukkit.inventory.ItemStack pigzombie = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.MOB_SPAWNER))
 //      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$775000")
@@ -584,8 +594,8 @@ public class GUIClass
 	    
 	    
     for (int i = 0; i < inv.getSize(); i++) {
-      if (((inv.getItem(i) == null) || (inv.getItem(i).getType() == org.bukkit.Material.AIR)) && 
-        (i != 39) && (i != 40) && (i != 41) && (i != 42) && (i != 43))
+      if (((inv.getItem(i) == null) || (inv.getItem(i).getType() == org.bukkit.Material.AIR)))
+    		  //&& (i != 39) && (i != 40) && (i != 41) && (i != 42) && (i != 43))
       {
         inv.setItem(i, new ItemBuilder(org.bukkit.Material.STAINED_GLASS_PANE).setName(" ")
           .setDyeColor(org.bukkit.DyeColor.LIGHT_BLUE).toItemStack());
@@ -598,7 +608,7 @@ public class GUIClass
   public static Inventory mobDrops() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 45, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.GRAY + ChatColor.BOLD.toString() + " Mob Drop");
+      ChatColor.BOLD.toString() + " >" + ChatColor.GRAY + ChatColor.BOLD.toString() + " Mob Drop");
     
     org.bukkit.inventory.ItemStack ghasttear = new ItemBuilder(org.bukkit.Material.GHAST_TEAR)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$300")
@@ -744,11 +754,11 @@ public class GUIClass
   public static Inventory oreMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 45, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.BLUE + ChatColor.BOLD.toString() + " Ore");
+      ChatColor.BOLD.toString() + " >" + ChatColor.BLUE + ChatColor.BOLD.toString() + " Ore");
     
-    org.bukkit.inventory.ItemStack diamondblock = new ItemBuilder(org.bukkit.Material.DIAMOND_ORE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$400")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$100")
+    org.bukkit.inventory.ItemStack diamondblock = new ItemBuilder(org.bukkit.Material.DIAMOND_BLOCK)
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$3600")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$900")
       .toItemStack();
     org.bukkit.inventory.ItemStack emeraldblock = new ItemBuilder(org.bukkit.Material.EMERALD_BLOCK)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$6750")
@@ -758,26 +768,26 @@ public class GUIClass
     org.bukkit.inventory.ItemStack goldblock = new ItemBuilder(org.bukkit.Material.GOLD_BLOCK)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.WHITE + 
       ChatColor.ITALIC.toString() + "Cannot Buy")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$450")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$405")
       .toItemStack();
     
     org.bukkit.inventory.ItemStack ironblock = new ItemBuilder(org.bukkit.Material.IRON_BLOCK)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$1125")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$135")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$90")
       .toItemStack();
     
     org.bukkit.inventory.ItemStack coalblock = new ItemBuilder(org.bukkit.Material.COAL_BLOCK)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$55")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$42")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$57")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$5")
       .toItemStack();
     
-    org.bukkit.inventory.ItemStack lapusblock = new ItemBuilder(org.bukkit.Material.LAPIS_BLOCK)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$130")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$42")
+    org.bukkit.inventory.ItemStack lapisblock = new ItemBuilder(org.bukkit.Material.LAPIS_BLOCK)
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$113")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$5")
       .toItemStack();
     
     org.bukkit.inventory.ItemStack redstoneblock = new ItemBuilder(org.bukkit.Material.REDSTONE_BLOCK)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$150")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$113")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$42")
       .toItemStack();
     
@@ -860,7 +870,7 @@ public class GUIClass
     inv.setItem(12, goldblock);
     inv.setItem(13, ironblock);
     inv.setItem(14, coalblock);
-    inv.setItem(15, lapusblock);
+    inv.setItem(15, lapisblock);
     inv.setItem(16, redstoneblock);
     inv.setItem(19, quartzBlock);
     inv.setItem(20, diamond);
@@ -878,7 +888,7 @@ public class GUIClass
   public static Inventory plantsFoodMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 45, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.GREEN + ChatColor.BOLD.toString() + " Plants");
+      ChatColor.BOLD.toString() + " >" + ChatColor.GREEN + ChatColor.BOLD.toString() + " Plants");
     
     org.bukkit.inventory.ItemStack catus = new ItemBuilder(org.bukkit.Material.CACTUS)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$225")
@@ -936,7 +946,7 @@ public class GUIClass
       .toItemStack();
     
     org.bukkit.inventory.ItemStack goldenapple = new ItemBuilder(org.bukkit.Material.GOLDEN_APPLE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$10000")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$1100")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + 
       ChatColor.ITALIC.toString() + "Cannot Sell")
       .toItemStack();
@@ -1031,7 +1041,7 @@ public class GUIClass
   public static Inventory armorweponsyoolsMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 45, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.RED + ChatColor.BOLD.toString() + " Stuff");
+      ChatColor.BOLD.toString() + " >" + ChatColor.RED + ChatColor.BOLD.toString() + " Stuff");
     
     org.bukkit.inventory.ItemStack fishingrod = new ItemBuilder(org.bukkit.Material.FISHING_ROD)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$50")
@@ -1182,7 +1192,7 @@ public class GUIClass
   public static Inventory blockMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 54, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.AQUA + ChatColor.BOLD.toString() + " Blocks");
+      ChatColor.BOLD.toString() + " >" + ChatColor.AQUA + ChatColor.BOLD.toString() + " Blocks");
     
     org.bukkit.inventory.ItemStack hopper = new ItemBuilder(org.bukkit.Material.HOPPER)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$25000")
@@ -1202,18 +1212,18 @@ public class GUIClass
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack tnt = new ItemBuilder(org.bukkit.Material.TNT)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$5000")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$3000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "5")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack stickypiston = new ItemBuilder(org.bukkit.Material.PISTON_STICKY_BASE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$500")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$250")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
       .toItemStack();
     
     org.bukkit.inventory.ItemStack piston = new ItemBuilder(org.bukkit.Material.PISTON_BASE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$350")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$150")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
       .toItemStack();
@@ -1231,16 +1241,16 @@ public class GUIClass
       .setItemAmount(16).toItemStack();
     
     org.bukkit.inventory.ItemStack ice = new ItemBuilder(org.bukkit.Material.ICE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$10000")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
-      "Cannot Sell")
-      .setItemAmount(64).toItemStack();
-    
-    org.bukkit.inventory.ItemStack web = new ItemBuilder(org.bukkit.Material.WEB)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$1000")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$400")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
       .setItemAmount(16).toItemStack();
+    
+    org.bukkit.inventory.ItemStack web = new ItemBuilder(org.bukkit.Material.WEB)
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
+      "Cannot Sell")
+      .setItemAmount(4).toItemStack();
     
     org.bukkit.inventory.ItemStack netherfence = new ItemBuilder(org.bukkit.Material.NETHER_FENCE)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
@@ -1254,7 +1264,7 @@ public class GUIClass
       .setItemAmount(32).toItemStack();
     
     org.bukkit.inventory.ItemStack netherrack = new ItemBuilder(org.bukkit.Material.NETHERRACK)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$505")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$125")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
       .setItemAmount(64).toItemStack();
@@ -1277,12 +1287,12 @@ public class GUIClass
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack obsidian = new ItemBuilder(org.bukkit.Material.OBSIDIAN)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$3000")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$2")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$1000")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$5")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack glowstone = new ItemBuilder(org.bukkit.Material.GLOWSTONE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$500")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$350")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$2")
       .setItemAmount(64).toItemStack();
     
@@ -1317,34 +1327,34 @@ public class GUIClass
       .setItemAmount(16).toItemStack();
     
     org.bukkit.inventory.ItemStack sand = new ItemBuilder(org.bukkit.Material.SAND)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$350")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$150")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack redSand = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.SAND, 1, (short)1))
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$350")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
       "Cannot Sell")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack jungleWood = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.LOG, 3, (short)3))
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$300")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$3")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack brichWood = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.LOG, 2, (short)2))
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$300")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$3")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack spruceWood = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.LOG, 1, (short)1))
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$300")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$3")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack DOakWord = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.LOG_2, 1, (short)1))
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$300")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$200")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$3")
       .setItemAmount(64).toItemStack();
     
@@ -1359,33 +1369,34 @@ public class GUIClass
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack stone = new ItemBuilder(org.bukkit.Material.STONE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$600")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$350")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "3")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack cobble = new ItemBuilder(org.bukkit.Material.COBBLESTONE)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$500")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "200")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$2")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack grass = new ItemBuilder(org.bukkit.Material.GRASS)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$385")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$185")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "1")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack dirt = new ItemBuilder(org.bukkit.Material.DIRT)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$350")
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$150")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "1")
       .setItemAmount(64).toItemStack();
     
     org.bukkit.inventory.ItemStack quartzBlock = new ItemBuilder(org.bukkit.Material.QUARTZ_BLOCK)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$800")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "3")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "4")
       .setItemAmount(64).toItemStack();
     
-    org.bukkit.inventory.ItemStack lava = new ItemBuilder(org.bukkit.Material.HAY_BLOCK)
-      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$100")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "1")
+    org.bukkit.inventory.ItemStack lava = new ItemBuilder(org.bukkit.Material.LAVA_BUCKET)
+      .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$10000")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + ChatColor.ITALIC + 
+      "Cannot Sell")
       .setItemAmount(1).toItemStack();
     org.bukkit.inventory.ItemStack frame = new ItemBuilder(org.bukkit.Material.STAINED_GLASS_PANE).setName(" ").setDyeColor(org.bukkit.DyeColor.BLUE)
       .toItemStack();
@@ -1456,7 +1467,7 @@ public class GUIClass
   public static Inventory brewingMenu() {
     Inventory inv = org.bukkit.Bukkit.createInventory(null, 36, 
       ChatColor.DARK_AQUA + ChatColor.UNDERLINE.toString() + "Shop" + ChatColor.DARK_GRAY + 
-      ChatColor.BOLD.toString() + " ►" + ChatColor.DARK_PURPLE + ChatColor.BOLD.toString() + 
+      ChatColor.BOLD.toString() + " >" + ChatColor.DARK_PURPLE + ChatColor.BOLD.toString() + 
       " Brewing");
     org.bukkit.inventory.ItemStack caldorin = new ItemBuilder(org.bukkit.Material.CAULDRON_ITEM)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$500")
