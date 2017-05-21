@@ -1,2 +1,0 @@
-Summary for /www/javadecompilers/app/public/data/20.03.17/e2a04c4e36a54ddfce43e72acbfb672b/CCFly.jar
-Decompiled with CFR 0_118

@@ -17,8 +17,8 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 
 public class Cmd implements Listener, CommandExecutor {
 	static ArrayList<String> admin = new ArrayList();
-	static ArrayList<String> adminv = new ArrayList();
-	static ArrayList<String> adminf = new ArrayList();
+	//static ArrayList<String> adminv = new ArrayList();
+	//static ArrayList<String> adminf = new ArrayList();
 	static ArrayList<String> adminhit = new ArrayList();
 	static Main plugin;
 
@@ -42,6 +42,9 @@ public class Cmd implements Listener, CommandExecutor {
 					p.sendMessage(ChatColor.GREEN + "You have enabled hitmessage!");
 					return true;
 				}
+				if (label.equalsIgnoreCase("staff"))
+					if (adminhit.contains(p.getName()))
+						p.sendMessage("" + ChatColor.DARK_RED + ChatColor.BOLD + "WARNING: YOU HAVE HITMESSAGES ENABLED! DISABLE BY DOING: " + ChatColor.GOLD + "/hitmessages");
 		}
 		return true;
 	}
@@ -57,6 +60,12 @@ public class Cmd implements Listener, CommandExecutor {
 
 	@EventHandler
 	public void onAdminHitPlayer(EntityDamageByEntityEvent e) {
+		if (!(e.getEntity() instanceof Player)) {
+			return;
+		}
+		else if (!(e.getDamager() instanceof Player)) {
+			return;
+		}
 		Player p = (Player) e.getDamager();
 		if (adminhit.contains(p.getName())) {
 			e.setCancelled(true);
@@ -65,10 +74,6 @@ public class Cmd implements Listener, CommandExecutor {
 		if (adminhit.contains(pp.getName())) {
 			e.setCancelled(true);
 			if (adminhit.contains(pp.getName())) {
-				/*pp.sendMessage(ChatColor
-						.translateAlternateColorCodes('&',
-								plugin.getConfig().getString("Hit-Message", "&c! %name has hit you!"))
-						.replace("%name", p.getName()));*/
 				pp.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("Hit-Message"))
 						.replace("%name%", p.getName()));
 			}
@@ -78,7 +83,7 @@ public class Cmd implements Listener, CommandExecutor {
 	@EventHandler
 	public void onAdminBlockBreak(BlockBreakEvent e) {
 		Player p = e.getPlayer();
-		if (admin.contains(p.getName())) {
+		if (adminhit.contains(p.getName())) {
 			e.setCancelled(true);
 		}
 	}
@@ -86,7 +91,7 @@ public class Cmd implements Listener, CommandExecutor {
 	@EventHandler
 	public void onAdminDrop(PlayerDropItemEvent e) {
 		Player p = e.getPlayer();
-		if (admin.contains(p.getName())) {
+		if (adminhit.contains(p.getName())) {
 			e.setCancelled(true);
 		}
 	}
@@ -94,7 +99,7 @@ public class Cmd implements Listener, CommandExecutor {
 	@EventHandler
 	public void onAdminPickup(PlayerPickupItemEvent e) {
 		Player p = e.getPlayer();
-		if (admin.contains(p.getName())) {
+		if (adminhit.contains(p.getName())) {
 			e.setCancelled(true);
 		}
 	}
