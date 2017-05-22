@@ -1700,7 +1700,7 @@ public class InventoryClick
       }
       
       if ((cleaned1.equals("Donator Shop")) && 
-        (player.hasPermission("globa.donator"))) {
+        (player.hasPermission("global.donator"))) {
         player.openInventory(GUIClass.donatorMenu());
         event.setCancelled(true);
       }
