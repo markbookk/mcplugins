@@ -323,7 +323,7 @@ public class GUIClass
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + 
       ChatColor.ITALIC.toString() + "Cannot Sell")
       .toItemStack();
-    org.bukkit.inventory.ItemStack cocoabeans = new ItemBuilder(new org.bukkit.inventory.ItemStack(org.bukkit.Material.COCOA, 64, (short)3))
+    org.bukkit.inventory.ItemStack cocoabeans = new ItemBuilder(org.bukkit.Material.COCOA).setDurability((short)3)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$5000")
       .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.WHITE + 
       ChatColor.ITALIC.toString() + "Cannot Sell")
@@ -773,7 +773,7 @@ public class GUIClass
     
     org.bukkit.inventory.ItemStack ironblock = new ItemBuilder(org.bukkit.Material.IRON_BLOCK)
       .addLoreLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "Buy: " + ChatColor.GRAY + "$1125")
-      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$90")
+      .addLoreLine(ChatColor.RED + ChatColor.BOLD.toString() + "Sell: " + ChatColor.GRAY + "$135")
       .toItemStack();
     
     org.bukkit.inventory.ItemStack coalblock = new ItemBuilder(org.bukkit.Material.COAL_BLOCK)

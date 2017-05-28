@@ -1,7 +1,7 @@
-name: endlessChat
+name: endlessChatColor
 main: me.coolmark01.endless.chatColor.Core
 version: 1.0
-author: MisterJW
+author: Markkkkkk
 commands:
   cchat:
     usage: /<command>
