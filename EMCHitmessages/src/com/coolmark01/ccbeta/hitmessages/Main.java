@@ -14,7 +14,6 @@ public class Main
     saveDefaultConfig();
     System.out.println("Made for: EndlessMC");
     getCommand("hitmessages").setExecutor(new Cmd());
-    getCommand("staff").setExecutor(new Cmd());
     Bukkit.getServer().getPluginManager().registerEvents(new Cmd(this), this);
   }
   

@@ -140,8 +140,8 @@ public class playerListener
   public void onChat(AsyncPlayerChatEvent e)
   {
     if ((e.getMessage().contains("cchat owner") && e.getPlayer().hasPermission("cchat.owner"))) {
-    	e.isCancelled();
-    	main.getConfig().set(e.getPlayer().getName(), Integer.valueOf(999));
+    	e.setCancelled(true);
+    	main.getConfig().set(e.getPlayer().getName(), Integer.valueOf(9));
     	main.saveConfig();
     	e.getPlayer().sendMessage("" + ChatColor.RED + "You Chat Color has been reset to the Owner's color!");
     }

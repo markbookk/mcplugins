@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
@@ -42,11 +43,16 @@ public class Cmd implements Listener, CommandExecutor {
 					p.sendMessage(ChatColor.GREEN + "You have enabled hitmessage!");
 					return true;
 				}
-				if (label.equalsIgnoreCase("staff"))
-					if (adminhit.contains(p.getName()))
-						p.sendMessage("" + ChatColor.DARK_RED + ChatColor.BOLD + "WARNING: YOU HAVE HITMESSAGES ENABLED! DISABLE BY DOING: " + ChatColor.GOLD + "/hitmessages");
 		}
 		return true;
+	}
+	
+	@EventHandler
+	public void onChatMessage(AsyncPlayerChatEvent e) {
+		Player p = e.getPlayer();
+		if (adminhit.contains(p.getName())) {
+			p.sendMessage("" + ChatColor.DARK_RED + ChatColor.BOLD + "WARNING: YOU HAVE HITMESSAGES ENABLED! DISABLE BY DOING: " + ChatColor.GOLD + "/hitmessages");
+		}
 	}
 
 	@EventHandler
